@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
-
   def index
-    @posts = Post.all
+    @posts = Post.where(:member_email => session[:member_email])
   end
 
   def new
@@ -10,6 +9,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+
+    if(member_signed_in?)
+      @post.member_email = session[:member_email]
+    end
 
     if @post.save
       redirect_to @post
@@ -20,10 +23,20 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if @post.member_email == session[:member_email]
+      @post
+    else
+      redirect_to posts_path
+    end
   end
 
   def edit
     @post = Post.find(params[:id])
+    if @post.member_email == session[:member_email]
+      @post
+    else
+      redirect_to posts_path
+    end
   end
 
   def update

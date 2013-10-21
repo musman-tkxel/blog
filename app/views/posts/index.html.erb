@@ -1,21 +1,34 @@
-<h1>Listing Posts</h1>
+<% if member_signed_in? %>
+    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-<%= link_to 'NEW POST', new_post_path %>
+    <h1>Listing Posts</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-    <th></th>
-  </tr>
+    <%= link_to 'NEW POST', new_post_path %>
 
-  <% @posts.each do |post| %>
+    <table>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.text %></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <th>Title</th>
+        <th>Text</th>
+        <th></th>
+        <th></th>
       </tr>
-  <% end %>
-</table>
+
+      <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.text %></td>
+            <td><%= link_to 'Show', post_path(post) %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          </tr>
+      <% end %>
+    </table>
+    <br/><br/>
+    <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+
+<% else %>
+
+    <h1> Rails: Sample Application with Devise Gem</h1>
+    <%= link_to "Sign In", new_member_session_path, :method => :get %>
+    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+
+<% end %>

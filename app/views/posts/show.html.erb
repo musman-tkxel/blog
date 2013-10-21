@@ -1,11 +1,29 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<% if member_signed_in? %>
+    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+    </p>
 
-<%= link_to 'BACK', posts_path %>
+    <p>
+      <strong>Text:</strong>
+      <%= @post.text %>
+    </p>
+
+    <h2>Comments</h2>
+    <%= render @post.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render "comments/form" %>
+
+    <%= link_to 'Edit Post', edit_post_path(@post) %> |
+    <%= link_to 'Back to Posts', posts_path %>
+
+<% else %>
+
+    <h1> Rails: Sample Application with Devise Gem</h1>
+    <%= link_to "Sign In", new_member_session_path, :method => :get %>
+    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+
+<% end %>

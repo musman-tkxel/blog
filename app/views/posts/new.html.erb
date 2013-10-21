@@ -1,31 +1,42 @@
-<%= form_for :post, url: posts_path do |f|  %>
+<% if member_signed_in? %>
+    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-    <% if @post.errors.any? %>
-        <div id="errorExplanation">
-          <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-            this post from being saved:</h2>
-          <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
+    <%= form_for :post, url: posts_path do |f|  %>
+
+        <% if @post.errors.any? %>
+            <div id="errorExplanation">
+              <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+                this post from being saved:</h2>
+              <ul>
+                <% @post.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+
+        <p>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </p>
+
+        <p>
+          <%= f.label :text%>
+          <%= f.text_area :text %>
+        </p>
+
+        <p>
+          <%= f.submit %>
+        </p>
     <% end %>
 
+    <%= link_to 'BACK', posts_path %>
 
-    <p>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </p>
+<% else %>
 
-    <p>
-      <%= f.label :text%>
-      <%= f.text_area :text %>
-    </p>
+    <h1> Rails: Sample Application with Devise Gem</h1>
+    <%= link_to "Sign In", new_member_session_path, :method => :get %>
+    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
 
-    <p>
-      <%= f.submit %>
-    </p>
 <% end %>
-
-<%= link_to 'BACK', posts_path %>
