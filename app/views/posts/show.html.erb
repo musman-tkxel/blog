@@ -2,6 +2,11 @@
     <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
     <p>
+      <strong>Avatar:</strong>
+      <%= image_tag @post.avatar %>
+    </p>
+
+    <p>
       <strong>Title:</strong>
       <%= @post.title %>
     </p>

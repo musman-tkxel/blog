@@ -1,7 +1,7 @@
 <% if member_signed_in? %>
     <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-    <%= form_for :post, url: posts_path do |f|  %>
+    <%= form_for :post, url: posts_path, :html => { :multipart => true } do |f|  %>
 
         <% if @post.errors.any? %>
             <div id="errorExplanation">
@@ -24,6 +24,11 @@
         <p>
           <%= f.label :text%>
           <%= f.text_area :text %>
+        </p>
+
+        <p>
+          <%= f.label :avatar%>
+          <%= f.file_field :avatar %>
         </p>
 
         <p>

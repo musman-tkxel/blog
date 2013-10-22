@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 1.2'
 
 # Device Gem for Validation and Authentication
 gem 'devise'
-
+gem "paperclip", "~> 3.0"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
