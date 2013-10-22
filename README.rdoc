@@ -5,7 +5,7 @@ Project Title:  BLOG
 Author:         Muhammad Usman
 Email:          muhammad.usman@tkxel.com
 
-Technologies:   Ruby(1.9.3) + Rails(4.0.0) + Device
+Technologies:   Ruby(1.9.3) + Rails(4.0.0) + Device + Paperclip
 
 Description:
 It is a simple blog application in which I used Device gem for authentication.

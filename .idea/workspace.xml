@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a746a88e-dd00-4a71-8dab-17cbee2f22da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blog.iml" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/new.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/posts/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +22,7 @@
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.1.1/lib/devise.rb" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382346353643" ignored="false" />
     <file path="/registration_controller.rb" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382357098868" ignored="false" />
     <file path="/schema.rb" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382348688846" ignored="false" />
-    <file path="/README.rdoc" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382357767632" ignored="false" />
+    <file path="/README.rdoc" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382435867661" ignored="false" />
     <file path="/member.rb" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382419658442" ignored="false" />
     <file path="/development.rb" changelist="a746a88e-dd00-4a71-8dab-17cbee2f22da" time="1382429793475" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,6 +71,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rdoc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="63" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="45" selection-start="399" selection-end="399" vertical-scroll-proportion="0.25646552">
+            <state line="18" column="45" selection-start="399" selection-end="399" vertical-scroll-proportion="-7.0416665">
               <folding />
             </state>
           </provider>
@@ -124,15 +120,6 @@
         <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="28" column="53" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,7 +154,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/controllers/comments_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/registration_controller.rb" />
-        <option value="$PROJECT_DIR$/README.rdoc" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/views/registration/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/member.rb" />
@@ -181,6 +167,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/index.html.erb" />
+        <option value="$PROJECT_DIR$/README.rdoc" />
       </list>
     </option>
   </component>
@@ -936,13 +923,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131022053001_add_attachment_avatar_to_members.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="44" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20131022061750_add_attachment_avatar_to_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="29" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0">
@@ -1043,7 +1023,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="45" selection-start="399" selection-end="399" vertical-scroll-proportion="0.25646552">
+        <state line="18" column="45" selection-start="399" selection-end="399" vertical-scroll-proportion="-7.0416665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="63" selection-start="169" selection-end="169" vertical-scroll-proportion="0.2">
           <folding />
         </state>
       </provider>
