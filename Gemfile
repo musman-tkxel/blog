@@ -5,8 +5,8 @@ gem 'rails', '4.0.0'
 
 
 # Use Tweeter Bootstrap API
-gem 'bootstrap-sass', '2.3.2.0'
-
+gem "twitter-bootstrap-rails"
+gem "less-rails"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

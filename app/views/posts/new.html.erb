@@ -1,47 +1,14 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+</div>
+
 <% if member_signed_in? %>
-    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-    <%= form_for :post, url: posts_path, :html => { :multipart => true } do |f|  %>
-
-        <% if @post.errors.any? %>
-            <div id="errorExplanation">
-              <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-                this post from being saved:</h2>
-              <ul>
-                <% @post.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
-
-
-        <p>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-        </p>
-
-        <p>
-          <%= f.label :text%>
-          <%= f.text_area :text %>
-        </p>
-
-        <p>
-          <%= f.label :avatar%>
-          <%= f.file_field :avatar %>
-        </p>
-
-        <p>
-          <%= f.submit %>
-        </p>
-    <% end %>
-
-    <%= link_to 'BACK', posts_path %>
-
+    <%= render :partial => 'form' %>
 <% else %>
 
-    <h1> Rails: Sample Application with Devise Gem</h1>
-    <%= link_to "Sign In", new_member_session_path, :method => :get %>
-    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+    <h1> Welcome to BLOG </h1>
 
 <% end %>

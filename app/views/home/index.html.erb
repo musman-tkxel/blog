@@ -1,13 +1,16 @@
 <% if member_signed_in? %>
-    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+    <%- model_class = Post -%>
+    <div class="page-header">
+      <h1><%= 'Welcome' %></h1>
+      <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+    </div>
+
     <h3>You have successfully signed in!</h3>
     <% session[:member_email] = current_member[:email] %>
-    <%= link_to "Proceed", posts_path, :method => :get %>
+    <%= link_to "Proceed to BLOG", posts_path, :method => :get, :class => 'btn' %>
 
 <% else %>
 
-    <h1> Rails: Sample Application with Devise Gem</h1>
-    <%= link_to "Sign In", new_member_session_path, :method => :get %>
-    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+    <h1> Welcome to BLOG </h1>
 
 <% end %>

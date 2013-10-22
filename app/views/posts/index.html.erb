@@ -1,36 +1,44 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+</div>
+
 <% if member_signed_in? %>
-    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_post_path,
+                :class => 'btn btn-primary' %>
 
-    <h1>Listing Posts</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:avatar) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:text) %></th>
+      <th><%= model_class.human_attribute_name(:member_email) %></th>
 
-    <%= link_to 'NEW POST', new_post_path %>
-
-    <table>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
       <tr>
-        <th>Avatar</th>
-        <th>Title</th>
-        <th>Text</th>
-        <th></th>
-        <th></th>
-      </tr>
+        <td><%= image_tag post.avatar.url %></td>
+        <td><%= post.title %></td>
+        <td><%= post.text %></td>
+        <td><%= post.member_email %></td>
 
-      <% @posts.each do |post| %>
-          <tr>
-            <td><%= image_tag post.avatar.url %></td>
-            <td><%= post.title %></td>
-            <td><%= post.text %></td>
-            <td><%= link_to 'Show', post_path(post) %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          </tr>
-      <% end %>
-    </table>
-    <br/><br/>
-    <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+        <td>
+          <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini btn-danger' %>
+          <%= link_to 'Show', post_path(post), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <% else %>
 
-    <h1> Rails: Sample Application with Devise Gem</h1>
-    <%= link_to "Sign In", new_member_session_path, :method => :get %>
-    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+<h1> Welcome to BLOG </h1>
 
 <% end %>

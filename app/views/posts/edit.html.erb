@@ -1,50 +1,13 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+</div>
 <% if member_signed_in? %>
-    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-    <h1>Editing Post</h1>
-
-    <%= form_for :post, url: post_path(@post.id), method: :patch do |f| %>
-
-        <% if @post.errors.any? %>
-            <div id="errorExplanation">
-              <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-                this post from being saved:</h2>
-              <ul>
-                <% @post.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
-
-
-        <p>
-          <%= f.label :avatar %><br>
-          <%= f.file_field :avatar %>
-        </p>
-
-        <p>
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
-        </p>
-
-        <p>
-          <%= f.label :text %><br>
-          <%= f.text_area :text %>
-        </p>
-
-        <p>
-          <%= f.submit %>
-        </p>
-
-    <% end %>
-
-    <%= link_to 'Back', posts_path %>
-
+<%= render :partial => 'form' %>
 <% else %>
 
-    <h1> Rails: Sample Application with Devise Gem</h1>
-    <%= link_to "Sign In", new_member_session_path, :method => :get %>
-    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+<h1> Welcome to BLOG </h1>
 
 <% end %>

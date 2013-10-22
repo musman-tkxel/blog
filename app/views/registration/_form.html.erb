@@ -1,0 +1,37 @@
+<%= form_tag(member_registration_path,:method => 'post', :html => { :class => 'form-horizontal' }) %>
+<%= devise_error_messages! %>
+
+    <div class="control-group">
+      <%= 'Username' %>
+      <div class="controls">
+        <%= text_field_tag "member[username]",@member.username, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+        <%= 'Email' %>
+        <div class="controls">
+          <%=email_field_tag "member[email]",@member.email, :class => 'text_field' %>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <%= 'Password' %>
+        <div class="controls">
+            <%=password_field_tag "member[password]",@member.password, :class => 'text_field' %>
+        </div>
+     </div>
+
+    <div class="control-group">
+        <%= 'Confirm Password' %>
+        <div class="controls">
+          <%=password_field_tag "member[password_confirmation]",@member.password_confirmation, :class => 'text_field' %>
+        </div>
+     </div>
+
+
+    <div class="form-actions">
+      <%= submit_tag nil, :class => 'form_submit' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.back")),
+                  root_path, :class => 'btn' %>
+    </div>

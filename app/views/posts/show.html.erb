@@ -1,34 +1,31 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
+</div>
+
 <% if member_signed_in? %>
-    <b>LOGGED IN MEMBER:</b> <%= current_member[:username] %>
 
-    <p>
-      <strong>Avatar:</strong>
-      <%= image_tag @post.avatar %>
-    </p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:avatar) %>:</strong></dt>
+  <dd><%= image_tag @post.avatar.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @post.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:text) %>:</strong></dt>
+  <dd><%= @post.text %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:member_email) %>:</strong></dt>
+  <dd><%= @post.member_email %></dd>
+</dl>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @post.title %>
-    </p>
-
-    <p>
-      <strong>Text:</strong>
-      <%= @post.text %>
-    </p>
-
-    <h2>Comments</h2>
-    <%= render @post.comments %>
-
-    <h2>Add a comment:</h2>
-    <%= render "comments/form" %>
-
-    <%= link_to 'Edit Post', edit_post_path(@post) %> |
-    <%= link_to 'Back to Posts', posts_path %>
+<div class="form-actions">
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_post_path(@post), :class => 'btn btn-mini btn-danger' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              posts_path, :class => 'btn'  %>
+</div>
 
 <% else %>
 
-    <h1> Rails: Sample Application with Devise Gem</h1>
-    <%= link_to "Sign In", new_member_session_path, :method => :get %>
-    <%= link_to "Sign up", new_member_registration_path, :method => :get %>
+    <h1> Welcome to BLOG </h1>
 
 <% end %>
