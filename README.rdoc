@@ -12,5 +12,6 @@ It is a simple blog application in which I used Device gem for authentication.
 Members can create their account and can post statuses and also can comment on their posted status. Members can
 view only those posts which are posted by the logged-in member.
 
+Finish
 
 <tt>rake doc:app</tt>.
